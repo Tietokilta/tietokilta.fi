@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "positions",
+  "info": {
+    "name": "Position",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "integer"
+    },
+    "introduction": {
+      "type": "richtext"
+    },
+    "person": {
+      "model": "person",
+      "via": "positions"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.contact-info"
+    }
+  }
+}

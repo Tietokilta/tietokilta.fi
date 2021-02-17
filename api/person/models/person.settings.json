@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "name": "Person",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "fuksiYear": {
+      "type": "integer"
+    },
+    "nick": {
+      "type": "uid",
+      "required": true
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.contact-info"
+    },
+    "positions": {
+      "via": "person",
+      "collection": "position"
+    }
+  }
+}
